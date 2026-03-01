@@ -99,13 +99,13 @@
        HERO
     ───────────────────────────────────── */
     .hero {
-      min-height: 100vh;
+      min-height:auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 28px 80px;
+      padding: 64px 28px 44px;
       position: relative;
       background:
         radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.12) 0%, transparent 70%),
@@ -199,6 +199,12 @@
       text-decoration: none;
       box-shadow: 0 0 32px rgba(201,168,76,0.4);
       transition: transform 0.2s, box-shadow 0.2s;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+white-space: nowrap;
+line-height: 1;
+
     }
 
     .btn-gold:hover {
@@ -977,7 +983,9 @@
       flex-wrap: wrap;
       margin-bottom: 52px;
     }
-
+<p style="max-width:720px;margin:14px auto 0;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.55);">
+  ※上記は一般的な行動データと想定単価に基づく概算です。実数は貴店のGBPインサイト／予約導線クリック／通話件数をもとに初月に計測し、更新します。
+</p>
     .counter {
       text-align: center;
     }
@@ -1135,10 +1143,6 @@
     <a href="#before-after" class="btn-outline">実績・数字を見る</a>
   </div>
 
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
-  </div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -1167,7 +1171,7 @@
       <div class="pain-alert-headline">⚠ 今日も、競合があなたの顧客を奪っています</div>
       <p>
         Redondo Beach の競合レストランがデジタル最適化を進める中、対策をしないお店は検索順位が下がり続け、
-        AIの推薦リストからも外れていきます。<strong>1ヶ月の放置 ＝ 競合に数ヶ月分のアドバンテージを与えること</strong>と同義です。
+        AIの推薦リストからも外れていきます。<strong>1ヶ月の放置 ＝ 競合に数ヶ月分のアドバンテージを与えること</strong>と同じです。
         この差は、時間が経つほど取り戻せなくなります。
       </p>
     </div>
@@ -1263,7 +1267,7 @@
       <div class="ba-metrics">
         <div class="ba-metric">
           <div class="ba-metric-label">写真枚数</div>
-          <div class="ba-metric-value">2枚（低画質）→ <strong>30枚以上（プロ品質）</strong><br/>ルート検索数 +42%</div>
+          <div class="ba-metric-value">2枚（低画質）→ <strong>30枚以上（プロ品質）</strong><br/>ルート検索数 +10〜30%</div>
         </div>
         <div class="ba-metric">
           <div class="ba-metric-label">評価・レビュー数</div>
@@ -1393,7 +1397,7 @@
             <td class="metric-name">Googleルート検索数</td>
             <td class="before-val">基準値</td>
             <td class="arrow">→</td>
-            <td class="after-val">+42%</td>
+            <td class="after-val">+10〜30%</td>
             <td>写真刷新による来店見込み客の増加</td>
           </tr>
           <tr>
@@ -1453,7 +1457,10 @@
         <div class="roi-card-badge">最もお得・推奨プラン</div>
         <div class="roi-card-plan" style="margin-top:28px;">Growth</div>
         <div class="roi-card-price">$1,500</div>
-        <div class="roi-card-period">月額・完全丸投げプラン</div>
+        <div class="roi-card-period">月額・完全丸投げプラン（目安：1日あたり約$50）</div>
+<div style="font-size:12px;color:rgba(255,255,255,0.6);margin:-18px 0 22px;">
+  写真・GBP・レビュー・SNS・月次レポート込み
+</div>
         <ul class="roi-card-features">
           <li>Starter の全施策 ＋</li>
           <li>週1回 Google 投稿（毎月4回）</li>
@@ -1557,6 +1564,9 @@
         改善が見られない場合、翌月の費用は一切いただきません。
         それだけ私は自分の仕事に自信を持っています。
       </p>
+<p style="max-width:720px;margin:18px auto 0;font-size:14px;line-height:1.8;color:#bbb;">
+  初月は「成果保証」ではなく「実行保証」です。合意したタスク（例：写真30枚、カテゴリ最適化、メニュー入力、レビュー返信テンプレ整備、投稿4本など）を期日までに完了できなかった場合、未実施分は返金します。
+</p>
       <a href="#contact" class="btn-gold">今すぐ無料診断を受ける</a>
     </div>
 
@@ -1624,7 +1634,7 @@
     </div>
     <div class="counter">
       <div class="counter-num" id="cnt-b">$0</div>
-      <div class="counter-lbl">今日の機会損失（推定）</div>
+      <div class="counter-lbl">推定：取りこぼしの可能性</div>
     </div>
     <div class="counter">
       <div class="counter-num" id="cnt-c">0</div>
@@ -1651,19 +1661,17 @@
   </p>
   <div class="gold-line"></div>
   <div class="contact-card">
-    <div class="contact-row">
-      <div class="contact-ico">📱</div>
-      <span>LINE / WhatsApp でご連絡</span>
-    </div>
+<div class="contact-row">
+<div class="contact-ico">📱</div>
+<a href="https://wa.me/13103081781" target="_blank" style="color:inherit; text-decoration:none;">
+Chat
+</a>
+</div>
     <div class="contact-row">
       <div class="contact-ico">📧</div>
-      <span>Email: your@email.com</span>
+      <span>Email: m.nonaka@akanon-intl.com</span>
     </div>
-    <div class="contact-row">
-      <div class="contact-ico">📅</div>
-      <span>無料相談：30分・オンライン可</span>
-    </div>
-    <a href="mailto:your@email.com" class="btn-gold" style="width:100%; text-align:center; margin-top:12px;">
+   <a href="https://calendly.com/m-nonaka-akanon-intl/30min " class="btn-gold" style="width:100%; text-align:center; margin-top:12px;">
       今すぐ無料診断を予約する
     </a>
   </div>
