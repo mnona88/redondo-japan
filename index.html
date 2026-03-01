@@ -1114,6 +1114,22 @@ line-height: 1;
       margin: 0 auto 40px;
     }
   </style>
+/* --- Mobile spacing tighten (fix large gap) --- */
+@media (max-width: 640px) {
+  /* セクション全体の上下余白を少し圧縮（必要ならさらに下げてOK） */
+  .pain-section { padding: 64px 0; }
+  .ba-section   { padding: 64px 0; }
+
+  /* ギャップの主犯：ここを強めに詰める */
+  .stats-row { margin-bottom: 28px; }
+
+  /* pain-section内の各ブロックも軽く詰める（効きすぎたら数値を戻す） */
+  .pain-alert { margin-bottom: 36px; }
+  .photo-proof { margin-bottom: 36px; }
+
+  /* Before/After冒頭の説明ブロックの下余白も圧縮 */
+  .section-lead { margin-bottom: 40px !important; }
+}
 </head>
 <body>
 
@@ -1722,3 +1738,4 @@ Chat
 </script>
 </body>
 </html>
+
