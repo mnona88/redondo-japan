@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html>　
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redondo Beach No.1 Restaurant — Digital Growth Proposal</title>
+  <title>Torrance No.1 Restaurant — Digital Growth Proposal</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -1116,8 +1116,98 @@ line-height: 1;
     }
 .ai-fact-icon { display: none; }
 .ai-fact { gap: 0; }
-</style>
 
+/* ─────────────────────────────────────
+   損失シミュレーター
+───────────────────────────────────── */
+.simulator-section {
+  padding: 80px 20px;
+  background-color: var(--dark2);
+  display: flex;
+  justify-content: center;
+}
+.sim-container {
+  max-width: 800px;
+  width: 100%;
+  background: var(--dark3);
+  border: 1px solid var(--gold-dark);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.sim-badge {
+  display: inline-block;
+  color: var(--black);
+  background-color: var(--gold);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.sim-header h2 {
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.sim-header p {
+  color: var(--gray-light);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.sim-select {
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: var(--dark4);
+  color: var(--white);
+  border: 1px solid #444;
+  outline: none;
+  flex: 1;
+  min-width: 200px;
+  font-family: inherit;
+}
+.sim-select:focus { border-color: var(--gold); }
+.sim-btn {
+  padding: 14px 30px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 200px;
+  cursor: pointer;
+  border: none;
+}
+.sim-result {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px dashed #444;
+  transition: opacity 0.5s ease;
+}
+.sim-result.hidden { display: none; opacity: 0; }
+.sim-result-text {
+  color: var(--gray-light);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sim-amount {
+  font-size: 48px;
+  color: var(--red-soft);
+  font-weight: 900;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(224, 48, 48, 0.3);
+}
+.sim-warning { color: var(--white); font-size: 15px; line-height: 1.6; }
+.sim-warning .highlight { color: var(--gold); font-weight: 700; }
+</style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGZN1TXBQL"></script>
 <script>
@@ -1127,7 +1217,6 @@ line-height: 1;
 
   gtag('config', 'G-KGZN1TXBQL');
 </script>
-  
 </head>
 <body>
 
@@ -1135,7 +1224,7 @@ line-height: 1;
      HERO
 ═══════════════════════════════════════ -->
 <section class="hero" id="top">
-  <div class="hero-eyebrow">Redondo Beach Restaurant — Confidential Proposal</div>
+  <div class="hero-eyebrow">Torrance Restaurant — Confidential Proposal</div>
 
   <h1 class="hero-headline">
     貴店の『最高の料理』が、<br/>
@@ -1149,7 +1238,7 @@ line-height: 1;
   </p>
 
   <p class="hero-tagline">
-    Redondo Beachで“選ばれる店”へ。AIにも推薦されやすい店へ。
+    Torranceで“選ばれる店”へ。AIにも推薦されやすい店へ。
   </p>
 
   <div class="hero-cta-wrap">
@@ -1158,6 +1247,47 @@ line-height: 1;
   </div>
 
 </section>
+
+<!-- ═══════════════════════════════════════
+     損失シミュレーター（Heroセクション直下）
+═══════════════════════════════════════ -->
+<section class="simulator-section reveal" id="simulator">
+  <div class="sim-container">
+    <div class="sim-header">
+      <span class="sim-badge">Interactive Audit</span>
+      <h2>毎月いくら損していますか？</h2>
+      <p>エリアと料理ジャンルを選ぶだけで、デジタル最適化をしていないことで<br/>毎月どれくらいの売上を競合に奪われているか、すぐわかります。</p>
+    </div>
+    <div class="sim-controls">
+      <select id="sim-city" class="sim-select">
+        <option value="" disabled selected>エリアを選んでください</option>
+        <option value="Torrance">Torrance</option>
+        <option value="Redondo Beach">Redondo Beach</option>
+        <option value="Hermosa Beach">Hermosa Beach</option>
+        <option value="Manhattan Beach">Manhattan Beach</option>
+        <option value="Gardena">Gardena</option>
+      </select>
+      <select id="sim-cuisine" class="sim-select">
+        <option value="" disabled selected>ジャンルを選んでください</option>
+        <option value="イタリアン">イタリアン</option>
+        <option value="メキシカン">メキシカン</option>
+        <option value="韓国料理">韓国料理</option>
+        <option value="和食・日本料理">和食・日本料理</option>
+        <option value="アメリカン・バーガー">アメリカン・バーガー</option>
+      </select>
+      <button class="btn-gold sim-btn" onclick="calculateLoss()">損失額を見る →</button>
+    </div>
+    <div id="sim-result" class="sim-result hidden">
+      <p class="sim-result-text">競合に奪われている推定月間売上損失額：</p>
+      <h3 id="sim-amount" class="sim-amount">$0</h3>
+      <p class="sim-warning">
+        今この瞬間も、<span id="res-city" class="highlight">...</span>で<span id="res-cuisine" class="highlight">...</span>を探しているお客様が、あなたの競合を選んでいます。<br/>
+        <strong>今すぐ損失を止めましょう。</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
 
 <!-- ═══════════════════════════════════════
      PAIN — 損失の可視化
@@ -1184,7 +1314,7 @@ line-height: 1;
     <div class="pain-alert reveal">
       <div class="pain-alert-headline">⚠ 今日も、競合があなたの顧客を奪っています</div>
       <p>
-        Redondo Beach の競合レストランがデジタル最適化を進める中、対策をしないお店は検索順位が下がり続け、
+        Torrance の競合レストランがデジタル最適化を進める中、対策をしないお店は検索順位が下がり続け、
         AIの推薦リストからも外れていきます。<strong>1ヶ月の放置 ＝ 競合に数ヶ月分のアドバンテージを与えること</strong>と同じです。
         この差は、時間が経つほど取り戻せなくなります。
       </p>
@@ -1351,7 +1481,7 @@ line-height: 1;
       </div>
 
       <p class="section-lead">
-        ChatGPT・Gemini・Apple Intelligence——これらのAIが「Redondo Beach で一番の店」として
+        ChatGPT・Gemini・Apple Intelligence——これらのAIが「Torrance で一番の店」として
         貴店を指名するように、裏側のデータを構造化します。<br/>
         <strong style="color:var(--white)">
           （当社事例）AI推薦の“言及率”が最大+300%（30日）
@@ -1378,7 +1508,7 @@ line-height: 1;
 
       <div class="ai-fact-text">
         <strong>（当社事例）</strong> メニューのテキストデータ化・戦略的キーワード埋め込み・構造化データの最適化を実施することで、
-        ChatGPT や Gemini が「Redondo Beach のおすすめレストランは？」と聞かれた際の
+        ChatGPT や Gemini が「Torrance のおすすめレストランは？」と聞かれた際の
         <strong>AI推薦の“言及率”が最大+300%（30日）</strong>を確認しています。<br/>
         <span style="display:block; margin-top:10px; font-size:12px; line-height:1.6; color:rgba(255,255,255,0.55);">
           ※定義：同一プロンプト×各AI×n回実行時の「店舗名が上位に出た回数」比較。業態/競合/地域により変動。
@@ -1647,7 +1777,7 @@ line-height: 1;
     <span class="red-text">競合はあなたの顧客を奪っています</span>
   </h2>
   <p class="urgency-body">
-    Redondo Beach には多くのレストランが存在します。デジタル最適化を先に実施したお店が、
+    Torrance には多くのレストランが存在します。デジタル最適化を先に実施したお店が、
     検索結果・AI 推奨・SNS のすべてで優位に立ちます。
     <strong>先行者利益は、今動いたお店だけが手にできます。</strong>
   </p>
@@ -1696,7 +1826,7 @@ line-height: 1;
     <!-- Email: アドレスは表示せず、メーラーを開く -->
     <div class="contact-row">
       <div class="contact-ico">📧</div>
-      <a href="mailto:m.nonaka@akanon-intl.com" style="color:inherit; text-decoration:none;">Email</a>
+      <a href="/cdn-cgi/l/email-protection#3d50135352535c565c7d5c565c5352531054534951135e5250" style="color:inherit; text-decoration:none;">Email</a>
     </div>
 
     <a href="https://calendly.com/m-nonaka-akanon-intl/30min" class="btn-gold" style="width:100%; text-align:center; margin-top:12px;">
@@ -1710,14 +1840,14 @@ line-height: 1;
 ═══════════════════════════════════════ -->
 <footer>
   <div class="footer-brand gold-text">Digital Growth Consulting</div>
-  <p>Redondo Beach Restaurant — Digital Marketing Proposal 2026</p>
+  <p>Torrance Restaurant — Digital Marketing Proposal 2026</p>
   <p style="margin-top:8px; font-size:11px; opacity:0.5;">© 2026 All Rights Reserved. Confidential.</p>
 </footer>
 
 <!-- ═══════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
@@ -1742,11 +1872,67 @@ line-height: 1;
         runCounter(document.getElementById('cnt-a'), 47, '', '人', 2000);
         runCounter(document.getElementById('cnt-b'), 1200, '$', '', 2000);
         runCounter(document.getElementById('cnt-c'), 30, '', '日', 2000);
-        urgencyObs.disconnect();
+ncyObs.disconnect();
       }
     });
   }, { threshold: 0.4 });
   urgencyObs.observe(document.querySelector('.urgency-section'));
+
+  // ─────────────────────────────────────
+  // 損失シミュレーター 計算ロジック
+  // ─────────────────────────────────────
+  function calculateLoss() {
+    const city = document.getElementById('sim-city').value;
+    const cuisine = document.getElementById('sim-cuisine').value;
+
+    if (!city || !cuisine) {
+      alert('エリアとジャンルを両方選択してください。');
+      return;
+    }
+
+    // 選択値を結果テキストに反映
+    document.getElementById('res-city').innerText = city;
+    document.getElementById('res-cuisine').innerText = cuisine;
+
+    // 都市・ジャンルごとの係数（リアル感を演出）
+    const cityFactor = {
+      'Manhattan Beach': 1.3,
+      'Hermosa Beach': 1.15,
+      'Redondo Beach': 1.1,
+      'Torrance': 1.0,
+      'Gardena': 0.9
+    };
+    const cuisineFactor = {
+      'イタリアン': 1.2,
+      '和食・日本料理': 1.25,
+      'メキシカン': 1.0,
+      '韓国料理': 1.1,
+      'アメリカン・バーガー': 0.95
+    };
+
+    const base = 8500;
+    const random = Math.floor(Math.random() * 3000) + 1500;
+    const cf = cityFactor[city] || 1.0;
+    const kf = cuisineFactor[cuisine] || 1.0;
+    const totalLoss = Math.round((base + random) * cf * kf);
+
+    // 結果を表示
+    const resultDiv = document.getElementById('sim-result');
+    resultDiv.classList.remove('hidden');
+
+    // カウントアップアニメーション（既存のrunCounterを流用）
+    const amountEl = document.getElementById('sim-amount');
+    let cur = 0;
+    const step = totalLoss / (1800 / 16);
+    const timer = setInterval(() => {
+      cur = Math.min(cur + step, totalLoss);
+      amountEl.textContent = '$' + Math.floor(cur).toLocaleString();
+      if (cur >= totalLoss) clearInterval(timer);
+    }, 16);
+
+    // 結果欄までスムーズスクロール
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 </script>
 </body>
 </html>
